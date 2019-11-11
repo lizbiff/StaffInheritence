@@ -1,4 +1,4 @@
-import Staff.Management.Manager;
+import Management.Manager;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,7 +24,7 @@ public class ManagerTest {
     }
     @Test
     public void canGetSalary(){
-        assertEquals(40000, manager.getSalary());
+        assertEquals(40000, manager.getSalary(), 0.01);
     }
 
     @Test
@@ -33,13 +33,14 @@ public class ManagerTest {
     }
 
     @Test
-    public void canRaiseSalary(){
-        assertEquals(41000.00, manager.raiseSalary(), 1);
+    public void canRaiseSalary() {
+        manager.raiseSalary(1000);
+        assertEquals(41000, manager.getSalary(), 0.01);
     }
 
     @Test
     public void canCalculateBonus(){
-        assertEquals(400, manager.payBonus(), 1);
+        assertEquals(400, manager.payBonus(), 0.01);
     }
 
 }
