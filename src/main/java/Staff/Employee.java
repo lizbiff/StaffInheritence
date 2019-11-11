@@ -27,7 +27,7 @@ public abstract class Employee {
 
     public abstract double raiseSalary();
 
-    public int payBonus(){
+    public double payBonus(){
 //        bonusAmount = (this.salary * 0.01);
         return (this.salary * 0.01);
     }
